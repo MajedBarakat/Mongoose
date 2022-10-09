@@ -50,4 +50,4 @@ const deleteShop = async()=>{
 // deleteShop();
 // update();
 // getAll();
-DB();
+// DB();
