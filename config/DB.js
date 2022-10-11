@@ -4,7 +4,7 @@ const DB=async()=>{
         await mongoose.connect(process.env.mongo_URI)
         console.log("database connected......")
     }catch(error){
-        console.log(error)
+        console.log('error',err)
     }
 }
 require("dotenv").config({path:"./.env"})
