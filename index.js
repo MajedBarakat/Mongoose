@@ -1,15 +1,18 @@
 const express = require('express');
 const app = express();
+require("dotenv").config({path:"./config/.env"})
 const PORT=process.env.PORT || 5003;
-const DB=require('./config/.env');
+const DB=require('./config/DB');
 const ShopDB=require('./model/model');
+
+DB()
 
 //New
 
-// const bady = new ShopDB({name:"majed",age:26,favoriteFood:['pizza']});
-// bady.save((err)=>{
-//        (err)?console.log("error while saving",err):console.log("saved successfully")
-//         })
+const bady = new ShopDB({name:"majed",age:26,favoriteFood:['pizza']});
+bady.save((err)=>{
+       (err)?console.log("error while saving",err):console.log("saved successfully")
+        })
 
 // app.listen(PORT,(err)=>{
 //     err ? console.log(err)
@@ -57,7 +60,7 @@ const ShopDB=require('./model/model');
 //     }}
 
 
-    //Find by id
+//Find by id
 
 // const getid = async()=>{
 //     try{
@@ -124,7 +127,21 @@ const ShopDB=require('./model/model');
 //     }
 // }
 
+//Find by id and push hamburger
 
+// const pushandupdate=async()=>{
+//     try{
+//         const data=await ShopDB.findById({_id:"634d5e3b927b1d95e3374fdc"})
+//         data.favoriteFood.push("hamburger")
+//         await ShopDB.updateOne(data)
+    
+//     }catch(error){
+//             console.log(error)
+//     }
+// }
+
+    
+// pushandupdate()
 // dalete();
 // update();
 // getname();

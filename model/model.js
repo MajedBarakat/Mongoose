@@ -3,7 +3,7 @@ const {Schema,model}=mongoose;
 const ShopSchema=new Schema({
     name:{type:String,require:true},
     age:{type:Number},
-    favoriteFood:{type:String}
+    favoriteFood:{type:Array}
 })
 const ShopDB=mongoose.model("user",ShopSchema);
 
